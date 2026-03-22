@@ -1,0 +1,5 @@
+{
+  "name": "LRC Maker",
+  "description": "Upload audio and lyrics to create synced .lrc files. Automatically strips HTML and section headers.",
+  "requestFramePermissions": []
+}
