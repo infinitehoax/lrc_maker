@@ -47,6 +47,9 @@ export default function App() {
 
   const handleParseLyrics = () => {
     let cleaned = rawLyrics.replace(/<[^>]*>?/gm, '');
+    // Strip Genius annotations e.g. [lyric text](123456) -> lyric text
+    cleaned = cleaned.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    // Strip section headers like [Intro: bbno$]
     cleaned = cleaned.replace(/\[.*?\]/g, '');
     
     const parsed = cleaned.split('\n')
